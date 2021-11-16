@@ -1,0 +1,5 @@
+require("plugins")
+require("plugin_settings.lua-tree")
+require("plugin_settings.nvim-cmp")
+require("settings")
+require("mappings")
