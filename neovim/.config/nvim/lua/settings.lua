@@ -1,3 +1,9 @@
+--% markdown
+-- # Settings
+-- 
+-- ## Loading plugins
+--
+--% lua
 require("bufferline").setup{}
 require('lualine').setup{
     options = {
@@ -6,18 +12,19 @@ require('lualine').setup{
 }
 require("todo-comments").setup{}
 require('gitsigns').setup{}
--- require'telescope'.load_extension('project')
 
-
+--% markdown
+-- ## Setting editor options
+--
+--% lua
 local set = vim.opt -- set options
 
-set.background = "dark" -- or "light" for light mode
-vim.cmd([[colorscheme material]])
-vim.g.material_style = "darker"
-
-vim.wo.relativenumber = true
-vim.wo.number = true
-vim.wo.cursorline = true
+--% markdown
+-- ### Usage options
+-- #### Full lua
+--
+--% lua
+set.encoding="utf8"
 set.tabstop = 4
 set.softtabstop = 4
 set.shiftwidth = 4
@@ -25,8 +32,6 @@ set.shiftwidth = 4
 set.expandtab = true
 -- Be smart when using tabs
 set.smarttab = true
-
-set.syntax = "on"
 set.filetype.plugin = "on"
 set.filetype.indent = "on"
 set.ignorecase = true
@@ -41,10 +46,31 @@ set.lazyredraw = true
 -- For regular expressions turn magic on
 set.magic = true
 
-set.encoding="utf8"
+--% markdown
+-- #### Vimscript
+--
+--% lua
+vim.cmd([[set mouse=a]])
 vim.cmd([[set nobackup]])
 vim.cmd([[set nowb]])
 vim.cmd([[set noswapfile]])
+vim.cmd([[set clipboard+=unnamedplus]])
+
+--% markdown
+-- ### Appearance settings
+-- #### Full lua
+--
+--%lua 
+set.background = "dark" -- or "light" for light mode
+vim.g.material_style = "darker"
+vim.wo.number = true
+vim.wo.relativenumber = true
+vim.wo.cursorline = true
+set.syntax = "on"
 set.scrolloff = 25
 
-vim.cmd([[set mouse=a]])
+--% markdown
+-- #### Vimscript
+--
+--% lua
+vim.cmd([[colorscheme material]])
