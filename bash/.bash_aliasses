@@ -2,6 +2,7 @@
 alias tn="tmux new -s"
 alias ta="tmux attach -t"
 alias tl="tmux list-sessions"
+alias tk="tmux kill-session -t"
 
 # windows aliasses
 alias notes="/mnt/c/Users/bram/AppData/Local/Programs/Mark\ Text/Mark\ Text.exe /home/bram/notes"

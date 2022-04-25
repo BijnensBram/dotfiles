@@ -115,28 +115,34 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
-SSH_ENV="$HOME/.ssh/agent-environment"
 
-function start_agent {
-    echo "Initialising new SSH agent..."
-    /usr/bin/ssh-agent | sed 's/^echo/#echo/' > "${SSH_ENV}"
-    echo succeeded
-    chmod 600 "${SSH_ENV}"
-    . "${SSH_ENV}" > /dev/null
-    /usr/bin/ssh-add;
-}
+# For Loading the SSH key
+/usr/bin/keychain -q --nogui $HOME/.ssh/id_github_wsl
+source $HOME/.keychain/DESKTOP-IPEJ8VQ-sh
 
-# Source SSH settings, if applicable
+#SSH_ENV="$HOME/.ssh/agent-environment"
 
-if [ -f "${SSH_ENV}" ]; then
-    . "${SSH_ENV}" > /dev/null
-    #ps ${SSH_AGENT_PID} doesn't work under cywgin
-    ps -ef | grep ${SSH_AGENT_PID} | grep ssh-agent$ > /dev/null || {
-        start_agent;
-    }
-else
-    start_agent;
-fi
+#function start_agent {
+#    echo "Initialising new SSH agent..."
+#    /usr/bin/ssh-agent | sed 's/^echo/#echo/' > "${SSH_ENV}"
+#    echo succeeded
+#    chmod 600 "${SSH_ENV}"
+#    . "${SSH_ENV}" > /dev/null
+#    /usr/bin/ssh-add;
+#}
+
+## Source SSH settings, if applicable
+
+#if [ -f "${SSH_ENV}" ]; then
+#    . "${SSH_ENV}" > /dev/null
+#    #ps ${SSH_AGENT_PID} doesn't work under cywgin
+#    ps -ef | grep ${SSH_AGENT_PID} | grep ssh-agent$ > /dev/null || {
+#        start_agent;
+#    }
+#else
+#    start_agent;
+#fi
+
 . "$HOME/.cargo/env"
 
 
@@ -144,22 +150,21 @@ export DISPLAY=`grep -oP "(?<=nameserver ).+" /etc/resolv.conf`:0.0
 source ~/.bash_aliasses
 
 eval "$(starship init bash)"
-cd 
 
 alias luamake=/home/bram/Projects/lua-language-server/3rd/luamake/luamake
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/bram/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+__conda_setup="$('/home/bram/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
-    if [ -f "/home/bram/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/bram/miniconda3/etc/profile.d/conda.sh"
+    if [ -f "/home/bram/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/bram/anaconda3/etc/profile.d/conda.sh"
     else
-        export PATH="/home/bram/miniconda3/bin:$PATH"
+        export PATH="/home/bram/anaconda3/bin:$PATH"
     fi
 fi
 unset __conda_setup
 # <<< conda initialize <<<
-
+export JULIA_NUM_THREADS=4
