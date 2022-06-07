@@ -38,42 +38,35 @@ return require('packer').startup(function()
     use 'MattesGroeger/vim-bookmarks'
     use 'christoomey/vim-tmux-navigator'
     use 'sindrets/diffview.nvim'
-    use {
-        "folke/trouble.nvim",
-        requires = "kyazdani42/nvim-web-devicons",
-        config = function()
-            require("trouble").setup {
-                -- your configuration comes here
-                -- or leave it empty to use the default settings
-                -- refer to the configuration section below
-            }
-        end
-    }
-
+    use 'kyazdani42/nvim-web-devicons'
+    use "folke/trouble.nvim"
+    
     --% markdown
     -- ### Appearance plugins
     --
     --% lua
     use 'rktjmp/lush.nvim'
-    use 'kyazdani42/nvim-web-devicons'
     use 'akinsho/bufferline.nvim'
     use 'nvim-lualine/lualine.nvim'
     use 'lewis6991/gitsigns.nvim'
-    use 'marko-cerovac/material.nvim'
-    use 'sonph/onehalf'
     use 'ellisonleao/gruvbox.nvim'
 
+    use 'preservim/vim-markdown'
+    use '~/Projects/nvim-mdrun'
+    use 'rafcamlet/nvim-luapad'
     --% markdown
     -- ### Language server plugins
     --
     --% lua
     use 'neovim/nvim-lspconfig'
-
+    use 'sbdchd/neoformat'
+    use 'mhartington/formatter.nvim'
     --% markdown
     -- ### Autocomplete plugins
     --
     --% lua
     use 'hrsh7th/nvim-cmp'
+    use 'kdheepak/cmp-latex-symbols'
     use 'hrsh7th/cmp-nvim-lsp'
     use 'hrsh7th/cmp-buffer'
     use 'hrsh7th/cmp-path'

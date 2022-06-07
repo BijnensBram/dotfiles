@@ -7,12 +7,12 @@
 require("bufferline").setup{}
 require('lualine').setup{
     options = {
-        theme = 'material-nvim'
+        theme = 'gruvbox_dark'
     }
 }
 require("todo-comments").setup{}
 require('gitsigns').setup{}
-
+require("trouble").setup{}
 --% markdown
 -- ## Setting editor options
 --
@@ -69,8 +69,10 @@ vim.wo.cursorline = true
 set.syntax = "on"
 set.scrolloff = 25
 
+vim.cmd([[let g:vim_markdown_folding_disabled = 1]])
+
 --% markdown
 -- #### Vimscript
 --
 --% lua
-vim.cmd([[colorscheme material]])
+vim.cmd([[colorscheme gruvbox]])

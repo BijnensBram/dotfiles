@@ -42,6 +42,7 @@ cmp.setup({
     --% lua
 	sources = cmp.config.sources({
 		{ name = 'nvim_lsp' },
+        { name = 'latex_symbols' },
 		{ name = 'vsnip' },
 		{ name = 'cmp_tabnine' },
 	}, 
@@ -106,7 +107,7 @@ require'lspconfig'.rust_analyzer.setup{}
 
 --% lua
 local sumneko_root_path = os.getenv( "HOME" )..'/Projects/lua-language-server'
-local sumneko_binary = sumneko_root_path.."/bin/Linux/lua-language-server"
+local sumneko_binary = sumneko_root_path.."/bin/lua-language-server"
 
 local runtime_path = vim.split(package.path, ';')
 table.insert(runtime_path, "lua/?.lua")
@@ -137,3 +138,31 @@ require'lspconfig'.sumneko_lua.setup {
     },
   },
 }
+
+require'lspconfig'.texlab.setup{
+    auxDirectory = ".",
+    bibtexFormatter = "texlab",
+    build = {
+      args = { "-pdf", "-interaction=nonstopmode", "-synctex=1", "%f" },
+      executable = "latexmk",
+      forwardSearchAfter = false,
+      onSave = false
+    },
+    chktex = {
+      onEdit = false,
+      onOpenAndSave = false
+    },
+    diagnosticsDelay = 300,
+    formatterLineLength = 80,
+    forwardSearch = {
+      args = {}
+    },
+    latexFormatter = "latexindent",
+    latexindent = {
+      modifyLineBreaks = false
+    }
+}
+
+require'lspconfig'.julials.setup{}
+
+require'lspconfig'.bashls.setup{}

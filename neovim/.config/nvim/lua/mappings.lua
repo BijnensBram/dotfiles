@@ -37,11 +37,15 @@ map("<leader>p", "<cmd>bp<CR>")
 -- All keymappings using telescope as popup window
 --
 --% lua
-nnoremap("<leader>ff", "<cmd>lua require('telescope.builtin').find_files()<cr>")
-nnoremap("<leader>qf", "<cmd>lua require('telescope.builtin').quickfix()<cr>")
-nnoremap("<leader>fg", "<cmd>lua require('telescope.builtin').live_grep()<cr>")
-nnoremap("<leader>fb", "<cmd>lua require('telescope.builtin').buffers()<cr>")
-nnoremap("<leader>fh", "<cmd>lua require('telescope.builtin').help_tags()<cr>")
-nnoremap("<leader>lw", "<cmd>lua require('telescope.builtin').lsp_workspace_diagnostics()<cr>")
-nnoremap("<leader>ls", "<cmd>lua require('telescope.builtin').lsp_workspace_symbols()<cr>")
-nnoremap("<leader>d", "<cmd>TodoTelescope<cr>")
+nnoremap("<leader>ff", "<cmd>Telescope find_files<cr>")
+nnoremap("<leader>qf", "<cmd>Telescope quickfix<cr>")
+nnoremap("<leader>fg", "<cmd>Telescope live_grep<cr>")
+nnoremap("<leader>fb", "<cmd>Telescope buffers<cr>")
+nnoremap("<leader>fh", "<cmd>Telescope help_tags<cr>")
+nnoremap("<leader>lw", "<cmd>Telescope diagnostics<cr>")
+nnoremap("<leader>ls", "<cmd>Telescope lsp_workspace_symbols<cr>")
+nnoremap("<leader>td", "<cmd>TodoTelescope<cr>")
+
+nmap("<Leader>sc", "<cmd>SendMdCellMove<cr>")
+nmap("<Leader>nc", "<cmd>NextMdCell<cr>")
+nmap("<Leader>pc", "<cmd>PreviousMdCell<cr>")
