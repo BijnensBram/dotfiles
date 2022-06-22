@@ -29,23 +29,24 @@ nnoremap("<C-l>", "<cmd>TmuxNavigateRight<CR>")
 --
 --% lua
 map("<C-u>", "<cmd>NvimTreeToggle<CR>")
-map("<leader>n", "<cmd>bn<CR>")
-map("<leader>p", "<cmd>bp<CR>")
+map("bn", "<cmd>bn<CR>")
+map("bp", "<cmd>bp<CR>")
 
 --% markdown
 -- ## Telescope mappings
 -- All keymappings using telescope as popup window
 --
 --% lua
-nnoremap("<leader>ff", "<cmd>Telescope find_files<cr>")
+nnoremap("ff", "<cmd>Telescope find_files<cr>")
+nnoremap("fb", "<cmd>Telescope buffers<cr>")
+nnoremap("fh", "<cmd>Telescope help_tags<cr>")
+nnoremap("fg", "<cmd>Telescope live_grep<cr>")
 nnoremap("<leader>qf", "<cmd>Telescope quickfix<cr>")
-nnoremap("<leader>fg", "<cmd>Telescope live_grep<cr>")
-nnoremap("<leader>fb", "<cmd>Telescope buffers<cr>")
-nnoremap("<leader>fh", "<cmd>Telescope help_tags<cr>")
 nnoremap("<leader>lw", "<cmd>Telescope diagnostics<cr>")
-nnoremap("<leader>ls", "<cmd>Telescope lsp_workspace_symbols<cr>")
-nnoremap("<leader>td", "<cmd>TodoTelescope<cr>")
+nnoremap("<leader>ws", "<cmd>Telescope lsp_workspace_symbols<cr>")
+nnoremap("td", "<cmd>TodoTelescope<cr>")
 
-nmap("<Leader>sc", "<cmd>SendMdCellMove<cr>")
-nmap("<Leader>nc", "<cmd>NextMdCell<cr>")
-nmap("<Leader>pc", "<cmd>PreviousMdCell<cr>")
+nmap("<Leader>cs", "<cmd>SendMdCellMove<cr>")
+nmap("<Leader>ls", "<cmd>SendMdLine<cr>")
+nmap("<Leader>cn", "<cmd>NextMdCell<cr>")
+nmap("<Leader>cp", "<cmd>PreviousMdCell<cr>")

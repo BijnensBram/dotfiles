@@ -11,7 +11,7 @@ alias tk="tmux kill-session -t"
 alias notes="/mnt/c/Users/bram/AppData/Local/Programs/Mark\ Text/Mark\ Text.exe /home/bram/notes"
 
 # git commands
-alias gg="git log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all"
+alias gg="git log --graph --decorate --all"
 alias ggs="git log --graph --oneline --abbrev-commit --decorate"
 
 # script aliasses

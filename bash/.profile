@@ -28,4 +28,4 @@ fi
 
 . "$HOME/.cargo/env"
 export PATH="$HOME/.poetry/bin:$PATH"
-
+export PATH=$PATH:/opt/hdfview/bin

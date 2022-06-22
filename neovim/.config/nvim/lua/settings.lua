@@ -13,6 +13,8 @@ require('lualine').setup{
 require("todo-comments").setup{}
 require('gitsigns').setup{}
 require("trouble").setup{}
+require("nvim_mdrun").setup{}
+require("fidget").setup{}
 --% markdown
 -- ## Setting editor options
 --
@@ -45,16 +47,11 @@ set.incsearch = true
 set.lazyredraw = true
 -- For regular expressions turn magic on
 set.magic = true
-
---% markdown
--- #### Vimscript
---
---% lua
-vim.cmd([[set mouse=a]])
-vim.cmd([[set nobackup]])
-vim.cmd([[set nowb]])
-vim.cmd([[set noswapfile]])
-vim.cmd([[set clipboard+=unnamedplus]])
+set.clipboard="unnamedplus"
+set.swapfile = false
+set.writebackup = false
+set.backup = false
+set.mouse = "a"
 
 --% markdown
 -- ### Appearance settings
@@ -69,7 +66,7 @@ vim.wo.cursorline = true
 set.syntax = "on"
 set.scrolloff = 25
 
-vim.cmd([[let g:vim_markdown_folding_disabled = 1]])
+vim.g.vim_markdown_folding_disabled = 1
 
 --% markdown
 -- #### Vimscript
