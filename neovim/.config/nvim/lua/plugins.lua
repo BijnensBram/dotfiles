@@ -31,7 +31,9 @@ return require("packer").startup(
         --% lua
         use "tpope/vim-commentary"
         use {"nvim-treesitter/nvim-treesitter", run = ":TSUpdate"}
+        use 'nvim-treesitter/playground'
         use "b0o/mapx.nvim"
+        use "folke/which-key.nvim"
         use "kyazdani42/nvim-tree.lua"
         use "nvim-lua/plenary.nvim"
         use "nvim-telescope/telescope.nvim"
@@ -51,11 +53,16 @@ return require("packer").startup(
         use "nvim-lualine/lualine.nvim"
         use "lewis6991/gitsigns.nvim"
         use "ellisonleao/gruvbox.nvim"
-
+        use {
+            "iamcco/markdown-preview.nvim",
+            run = function()
+                vim.fn["mkdp#util#install"]()
+            end
+        }
         use "sbdchd/neoformat"
         use "lukas-reineke/indent-blankline.nvim"
         use "j-hui/fidget.nvim"
-        use 'preservim/vim-markdown'
+        use "preservim/vim-markdown"
         -- use "vim-pandoc/vim-pandoc"
         -- use "vim-pandoc/vim-pandoc-syntax"
         use "~/Projects/nvim-mdrun"
@@ -65,6 +72,7 @@ return require("packer").startup(
         --
         --% lua
         use "neovim/nvim-lspconfig"
+        use "nvim-neorg/neorg"
         --% markdown
         -- ### Autocomplete plugins
         --

@@ -1,6 +1,6 @@
 --% markdown
 -- # Settings
--- 
+--
 -- ## Loading plugins
 --
 --% lua
@@ -15,6 +15,7 @@ require('gitsigns').setup{}
 require("trouble").setup{}
 require("nvim_mdrun").setup{}
 require("fidget").setup{}
+
 --% markdown
 -- ## Setting editor options
 --
@@ -26,6 +27,7 @@ local set = vim.opt -- set options
 -- #### Full lua
 --
 --% lua
+set.timeoutlen=0
 set.encoding="utf8"
 set.tabstop = 4
 set.softtabstop = 4
@@ -52,13 +54,15 @@ set.swapfile = false
 set.writebackup = false
 set.backup = false
 set.mouse = "a"
+set.scrolloff=25
+
 
 --% markdown
 -- ### Appearance settings
 -- #### Full lua
 --
---%lua 
-set.background = "dark" -- or "light" for light mode
+--%lua
+set.background = "dark" -- or "light" for light mo
 vim.g.material_style = "darker"
 vim.wo.number = true
 vim.wo.relativenumber = true
@@ -73,3 +77,4 @@ vim.g.vim_markdown_folding_disabled = 1
 --
 --% lua
 vim.cmd([[colorscheme gruvbox]])
+vim.cmd[[set colorcolumn=100]]

@@ -4,10 +4,11 @@
 
 --% lua
 require("plugins")
+require("plugin_settings.treesitter")
 require("plugin_settings.lua-tree")
 require("plugin_settings.nvim-cmp")
 require("plugin_settings.diffview")
--- require("plugin_settings.treesitter")
+-- require("plugin_settings.neorg")
 -- require("plugin_settings.formatter")
 require("settings")
 require("mappings")

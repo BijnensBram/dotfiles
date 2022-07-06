@@ -166,3 +166,5 @@ require'lspconfig'.texlab.setup{
 require'lspconfig'.julials.setup{}
 
 require'lspconfig'.bashls.setup{}
+
+require'lspconfig'.marksman.setup{}
