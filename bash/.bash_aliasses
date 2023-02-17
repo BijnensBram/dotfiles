@@ -12,3 +12,6 @@ alias notes="/mnt/c/Users/bram/AppData/Local/Programs/Mark\ Text/Mark\ Text.exe 
 
 # git commands
 alias gg="git log --all --decorate --oneline --graph"
+
+# ranger
+alias rn='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'

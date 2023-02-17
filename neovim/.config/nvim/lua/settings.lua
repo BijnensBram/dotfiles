@@ -10,7 +10,7 @@ require('lualine').setup{
         theme = 'material-nvim'
     }
 }
-require("todo-comments").setup{}
+-- require("todo-comments").setup{}
 require('gitsigns').setup{}
 
 --% markdown
